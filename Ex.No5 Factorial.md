@@ -23,8 +23,7 @@ B is A*D.
 
 
 ### Output:
-![image](<img width="1919" height="1013" alt="Screenshot 2025-09-12 092947" src="https://github.com/user-attachments/assets/f50542b6-f62e-4dcc-80d5-131bfcbb39aa" />
-)
+![image](<img width="1919" height="1013" alt="Screenshot 2025-09-12 092947" src="https://github.com/user-attachments/assets/2ab663c8-abea-49e9-85cd-fbcc373e61c3" />)
 
 
 
