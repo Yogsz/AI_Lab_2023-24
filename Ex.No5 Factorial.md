@@ -17,13 +17,14 @@ factorial(0,1).
 factorial(A,B) :-
 A > 0,
 C is A-1,
-factorial(C,D),
+factorial(C,D),  
 B is A*D.
 ```
 
 
 ### Output:
-![image](<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/71d9ee6d-ffcc-4899-8031-5a247c3f724f" />)
+![image](<img width="1919" height="1013" alt="Screenshot 2025-09-12 092947" src="https://github.com/user-attachments/assets/f50542b6-f62e-4dcc-80d5-131bfcbb39aa" />
+)
 
 
 
