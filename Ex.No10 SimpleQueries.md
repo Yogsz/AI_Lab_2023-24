@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE:06.09.2025                                                                           
+### REGISTER NUMBER : 212223060312
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -21,9 +21,18 @@ Construct the FOL representation for the following sentences <br>
 5.	 Bill eats peanuts  <br> 
    Convert into clause form and Prove that John like Apple by using Prolog. <br> 
 ### Program:
-
+```
+likes(john,X):-food(X).
+food(apple).
+food(chicken).
+eats(sue,X):-eats(bill,X).
+eats(bill,peanuts).
+```
 
 ### Output:
+
+<img width="912" height="331" alt="image" src="https://github.com/user-attachments/assets/d44e6371-9aeb-44a2-9a5f-950c121b39db" />
+
 
 ### Task 2:
 Consider the following facts and represent them in predicate form: <br>              
@@ -34,18 +43,39 @@ Consider the following facts and represent them in predicate form: <br>
 Convert the facts in predicate form to clauses and then prove by resolution: “Steve likes BK301 course”<br> 
 
 ### Program:
-
+```
+likes(steve,X):-easycourse(X).
+hard(science).
+easycourse(X):-dept(havefun,X).
+dept(havefun,bk301).
+```
 
 ### Output:
+
+<img width="926" height="310" alt="image" src="https://github.com/user-attachments/assets/59916254-c4cc-4ff8-aae6-219d576cae39" />
+
 
 ### Task 3:
 Consider the statement <br> 
 “This is a crime for an American to sell weapons to hostile nations. The Nano , enemy of America has some missiles and its missiles were sold it by Colonal West who is an American” <br> 
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
-
+```
+crime(X):-american(X),weapon(Y),sells(X,Y,Z),hostile(Z,X).
+sells(west,Y,nano):-owns(nano,Y),missile(Y).
+weapon(Y):-missile(Y).
+hostile(B,A):-enemy(A,B).
+hostile(B,A):-enemy(B,A).
+enemy(nano,west).
+owns(nano,m1).
+missile(m1).
+american(west).
+```
 
 ### Output:
+
+<img width="926" height="316" alt="image" src="https://github.com/user-attachments/assets/c40825f9-9667-4a1b-95cb-4a16ed4e037a" />
+
 
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.
