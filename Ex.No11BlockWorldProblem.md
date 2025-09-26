@@ -17,17 +17,63 @@ Step 10 : Obtain the plan for given problem.<br>
      
 ### Program:
 
-
-
-
-
-
-
+domain.pddl
+(define (domain blocksworld) <br>
+(:requirements :strips :equality) <br>
+(:predicates (clear ?x) <br>
+(on-table ?x) <br>
+(arm-empty) <br>
+(holding ?x) <br>
+(on ?x ?y)) <br>
+(:action pickup <br>
+:parameters (?ob) <br>
+:precondition (and (clear ?ob) (on-table ?ob) (arm-empty)) <br>
+:effect (and (holding ?ob) (not (clear ?ob)) (not (on-table ?ob)) <br>
+(not (arm-empty)))) <br>
+(:action putdown <br>
+:parameters (?ob) <br>
+:precondition (and (holding ?ob)) <br>
+:effect (and (clear ?ob) (arm-empty) (on-table ?ob) <br>
+(not (holding ?ob)))) <br>
+(:action stack <br>
+:parameters (?ob ?underob) <br>
+:precondition (and (clear ?underob) (holding ?ob)) <br>
+:effect (and (arm-empty) (clear ?ob) (on ?ob ?underob) <br>
+(not (clear ?underob)) (not (holding ?ob)))) <br>
+(:action unstack <br>
+:parameters (?ob ?underob) <br>
+Ex.No: 11 Implementation of Block World Problem using PDDLDate : <br>
+:precondition (and (on ?ob ?underob) (clear ?ob) (arm-empty)) <br>
+:effect (and (holding ?ob) (clear ?underob) <br>
+(not (on ?ob ?underob)) (not (clear ?ob)) (not (arm-empty))))) <br>
 
 
 ### Input 
 
+Problem 1: Problem.pddl <br>
+(define (problem pb1) <br>
+(:domain blocksworld) <br>
+(:objects a b) <br>
+(:init (on-table a) (on-table b) (clear a) (clear b) (arm-empty)) <br>
+(:goal (and (on a b)))) <br>
+
+Problem 2: Problem2.pddl <br>
+(define(problem pb3) <br>
+(:domain blocksworld) <br>
+(:objects a b c) <br>
+(:init (on-table a) (on-table b) (on-table c) <br>
+(clear a) (clear b) (clear c) (arm-empty)) <br>
+(:goal (and (on a b) (on b c)))) <br>
+
+
+
 ### Output/Plan:
+
+<img width="947" height="691" alt="image" src="https://github.com/user-attachments/assets/c9f3a1e0-5c53-4beb-a894-d60569c3a2ee" />
+
+<img width="502" height="449" alt="image" src="https://github.com/user-attachments/assets/bfac2872-c825-4818-a7a3-004974550dfd" />
+
+
 
 
 
